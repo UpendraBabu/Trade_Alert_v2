@@ -1,12 +1,10 @@
-import { Alert, Box, Button, Container, Icon, Modal, Stack, TextField, Typography } from '@mui/material';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
+import { Box, Button, Container, Stack, TextField, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 import trade_alert from '../assets/trade_alert.png';
 //
-import { GetData, getdata_endpoint_URL, postdata_endpoint_URL, postDataGettrade } from '../api/testing_api';
+import { postdata_endpoint_URL, postDataGettrade } from '../api/testing_api';
 
 //
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -18,17 +16,6 @@ import ShimmerLoder from './shimmer_loder';
 
 
 
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-  ...theme.applyStyles('dark', {
-    backgroundColor: '#1A2027',
-  }),
-}));
 
 const Trade_Alert = () => {
   //Date picker
@@ -68,7 +55,7 @@ const Trade_Alert = () => {
         alert(res.message);
 
       } else {
-     
+
         setData(res);
         setIsSeconderyLoder(false);
       }
@@ -94,9 +81,9 @@ const Trade_Alert = () => {
     postDataGettrade(postdata_endpoint_URL(), postData).then(function (res) {
       if (res.error === true) {
         alert(res.message);
-      
+
       } else {
-     
+
         setData(res);
         setIsLoading(false);
       }
@@ -109,7 +96,7 @@ const Trade_Alert = () => {
   };
 
   const onChangePagination = (startVal, endVal) => {
- 
+
     setIsSeconderyLoder(true);
     let postData = {
       // startingDate: new Date(startDateValue).getTime(),
@@ -123,9 +110,9 @@ const Trade_Alert = () => {
 
       if (res.error) {
         alert(res.message);
-       
+
       } else {
-   
+
         setData(res);
         setIsSeconderyLoder(false);
       }

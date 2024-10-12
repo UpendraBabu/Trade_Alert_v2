@@ -2,7 +2,7 @@ import { Box, Collapse, Pagination, Table, TableBody, TableCell, TableContainer,
 import React, { useState } from 'react';
 import ShimmerLoder from './shimmer_loder';
 import moment from 'moment';
-import { Reorder } from '@mui/icons-material';
+
 
 
 const headCells = [
@@ -33,7 +33,7 @@ const headCells = [
 ];
 const Content = ({ data, onChangePagination, isLoading }) => {
   const [page, setPage] = useState(0);
-  const [isShow, setIsShow] = useState(false);
+ 
   const tradeData = data.data;
   const totalCount = data.totalCount;
 
@@ -69,7 +69,7 @@ const Content = ({ data, onChangePagination, isLoading }) => {
   //   : tradeData;
 
   // console.log("log at page", "count", Math.ceil(totalCount/100),);
-  const filteredDatabook = tradeData;
+
 
   return (
     <>
@@ -121,7 +121,6 @@ const Content = ({ data, onChangePagination, isLoading }) => {
                   </TableRow>
                 ) : (tradeData?.map((row, index) => {
                   // const isItemSelected = isSelected(row.Name);
-                  const labelId = `enhanced-table-checkbox-${index}`;
                   let updateAt = moment(parseInt(row.updatedAt)).utc().format('ddd, DD MMM YYYY HH:mm:ss');
 
                   // row.data.map((val) => {
