@@ -33,7 +33,7 @@ export function postDataGettrade(url, postData) {
     // var superData = {
     //   "postData": postData
     // };
-    console.log("request header", postData);
+    // console.log("request header", postData);
     axiosClient.post(url, postData)
       .then(response => {
         if (response.data.error) {
