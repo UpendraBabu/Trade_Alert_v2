@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 
-// const url = ;
-
 const liveUrl = process.env.REACT_APP_LIVE_URL;
 
 
