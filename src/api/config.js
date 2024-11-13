@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-
 const liveUrl = process.env.REACT_APP_LIVE_URL;
-
 
 export const axiosTestingInstance = () => {
     const axiosClient = axios.create({
@@ -11,7 +9,6 @@ export const axiosTestingInstance = () => {
 
     return axiosClient;
 }
-
 
 export const axiosGettradeInstance = () => {
     

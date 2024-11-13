@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import ShimmerLoder from './shimmer_loder';
 import moment from 'moment';
 
-
-
 const headCells = [
   {
     id: '_id',
@@ -41,8 +39,10 @@ const Content = ({ data, onChangePagination, isLoading }) => {
     setPage(value - 1);
     let lowerLimit = value === 1 ? 0 : (value - 1) * 100;
     let upperLimit = lowerLimit + 100;
+    
     // console.log("upper limit", upperLimit, "lower limit", lowerLimit, value - 1);
     // let lowerLimit = value*
+    
     onChangePagination(lowerLimit, upperLimit)
     // For use case
     //   window.scrollTo({
@@ -69,8 +69,7 @@ const Content = ({ data, onChangePagination, isLoading }) => {
   //   : tradeData;
 
   // console.log("log at page", "count", Math.ceil(totalCount/100),);
-
-
+  
   return (
     <>
       {

@@ -1,10 +1,7 @@
 import { Container, Stack } from "@mui/material";
 import "./shimmer_style.css";
 
-
-
 export default function ShimmerLoder() {
-
     return (
         <Stack className="shimmer-wrapper" style={{}}>
             <Container className="shimmer-row" >
@@ -18,5 +15,4 @@ export default function ShimmerLoder() {
 
         </Stack>
     );
-
 }

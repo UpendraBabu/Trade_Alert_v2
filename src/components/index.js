@@ -3,10 +3,8 @@ import React, { useEffect, useState } from 'react';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 import trade_alert from '../assets/trade_alert.png';
-//
 import { postdata_endpoint_URL, postDataGettrade } from '../api/testing_api';
 
-//
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -14,29 +12,19 @@ import dayjs from 'dayjs';
 import Content from './content';
 import ShimmerLoder from './shimmer_loder';
 
-
-
-
 const Trade_Alert = () => {
   //Date picker
   let start, end;
 
   const [startDateValue, setStartDateValue] = React.useState(dayjs(start));
-
   const [endDateValue, setEndDateValue] = React.useState(dayjs(end));
 
   const [data, setData] = useState();
-
   const [isLoading, setIsLoading] = useState(false);
   const [isSeconderLoder, setIsSeconderyLoder] = useState(false);
 
   // const dateString = startDateValue;
   // const epochTime = new Date(dateString).getTime();
-
-  // console.log({ epochTime });
-
-
-
 
   const handleConfirm = () => {
     setIsLoading(true);
@@ -47,10 +35,7 @@ const Trade_Alert = () => {
       upperLimit: 100
     };
 
-
-
     postDataGettrade(postdata_endpoint_URL(), postData).then(function (res) {
-
       if (res.error) {
         alert(res.message);
 
@@ -64,8 +49,8 @@ const Trade_Alert = () => {
       alert(` ${error}`);
       setIsLoading(false);
     },);
-    setIsLoading(false);
 
+    setIsLoading(false);
   };
 
   const onGetTradeAlert = () => {
@@ -92,12 +77,11 @@ const Trade_Alert = () => {
       alert(`${error}`);
       setIsLoading(false);
     },);
-
   };
 
   const onChangePagination = (startVal, endVal) => {
-
     setIsSeconderyLoder(true);
+
     let postData = {
       // startingDate: new Date(startDateValue).getTime(),
       // endingDate: new Date(endDateValue).getTime(),
@@ -106,8 +90,6 @@ const Trade_Alert = () => {
     };
 
     postDataGettrade(postdata_endpoint_URL(), postData).then(function (res) {
-
-
       if (res.error) {
         alert(res.message);
 
@@ -124,11 +106,8 @@ const Trade_Alert = () => {
 
   };
 
-
-
   useEffect(() => {
     onGetTradeAlert();
-
   }, []);
 
   return (
@@ -218,14 +197,12 @@ const Trade_Alert = () => {
                 >
                   Submit
                 </Button>
-
               </Stack>
 
             </Stack>
           </LocalizationProvider>
 
           <Stack style={{ flexDirection: 'column', justifyContent: 'center', marginTop: "7px" }}>
-
             <Button variant='container1' onClick={onGetTradeAlert}
               sx={{
                 backgroundColor: '#ffd24d',
